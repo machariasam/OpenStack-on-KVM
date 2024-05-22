@@ -33,5 +33,41 @@ OpenStack is an open-source cloud computing platform for public and private clou
 - Ubuntu 22.04.4 LTS installed on all nodes.
 
 ### Setting Up KVM on Ubuntu 20.04 Desktop
+KVM, a virtualization module in the Linux kernel that leverages on modern hardware virtualization extensions such as Intel VT-x and AMD-V. 
+
+To check if processor’s virtualization extensions are enable, execute;
+
+   ```bash
+   egrep -c '(vmx|svm)' /proc/cpuinfo
+   ```
+1. Install KVM and related packages:
+
+    ```bash
+    sudo apt update
+    sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager
+    ```
+
+2. Enable and Start Libvirtd services:
+
+    ```bash
+    sudo systemctl enable libvirtd
+    sudo systemctl start libvirtd
+    sudo systemctl status libvirtd
+    ```
+
+3. Add your user to the `libvirt` and `kvm` groups:
+
+    ```bash
+    sudo usermod -aG libvirt $(whoami)
+    sudo usermod -aG kvm $(whoami)
+    ```
+
+4. Reboot the Host and confirm whether KVM modules are loaded on boot:
+   
+    ```bash
+    sudo systemctl status libvirtd
+    lsmod | grep kvm
+    ```
+
 
 
