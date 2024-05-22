@@ -32,4 +32,6 @@ OpenStack is an open-source cloud computing platform for public and private clou
 - A host machine with atleast 16GB RAM and 500GB storage.
 - Ubuntu 22.04.4 LTS installed on all nodes.
 
-### Setting Up KVM
+### Setting Up KVM on Ubuntu 20.04 Desktop
+
+
