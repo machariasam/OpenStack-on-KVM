@@ -13,7 +13,7 @@ OpenStack is an open-source cloud computing platform for public and private clou
 4. **Object Storage Node**: 
 5. **Block Storage Node**:
    
-Detail information on nodes is found [HERE](../../wiki/)
+Detail information on nodes is found [HERE](../../wiki/OpenStack‐on‐KVM/)
 
 ## Prerequisites
 - Basic knowledge of Linux system administration.
